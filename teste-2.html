@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body id="fundo">
+    <div id="container">
+        <div class="grafico" id="g1"></div>
+        <div class="grafico" id="g2"></div>
+        <div class="grafico" id="g3"></div>
+        <div class="grafico" id="g4"></div>
+        <div class="grafico" id="g5"></div>
+        <div class="grafico" id="g6"></div>
+    </div>
+    <style>
+        #fundo {
+            margin: 0px;
+            padding: 0px;
+            height: 100vh;
+            width: 100vw;
+            background-color: #33374b;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        #container {
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            margin: auto;
+            width: 600px;
+            height: 600px;
+            border-style: solid;
+            border-color: white
+        }
+        
+        .grafico {
+            position: relative;
+            width: 100px;
+            height: 25%;
+            transition-property: height;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+        }
+
+        .grafico:hover {
+            height: 100%;
+        }
+
+        #g1 {
+            background-color: #000000;
+        }
+
+        #g2 {
+            background-color: #2a232b;
+        }
+
+        #g3 {
+            background-color: #4d3650;
+        }
+
+        #g4 {
+            background-color: #6a3e70;
+        }
+
+        #g5 {
+            background-color: #783281;
+        }
+
+        #g6 {
+            background-color: #9623a5;
+        }
+    </style>
+
+</body>
+
+</html>
