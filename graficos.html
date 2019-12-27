@@ -42,13 +42,15 @@
             position: relative;
             width: 100px;
             height: 25%;
-            transition-property: height;
+            transition-property: height transform;
             transition-duration: 1s;
             transition-timing-function: linear;
         }
 
         .grafico:hover {
             height: 100%;
+            transform: scaleX(2);
+            z-index: 5;
         }
 
         #g1 {
