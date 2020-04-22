@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Circulo segue mouse</title>
+</head>
+
+<body>
+    <div class="quadrado"></div>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        body .quadrado {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 50px;
+            width: 50px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 2;
+            border: 2px solid #c0c0c0;
+            animation: muda-cor .5s infinite;
+        }
+
+        @keyframes muda-cor {
+            0% {
+                background: #d5bfda;
+            }
+
+            25% {
+                background: #8448b4;
+            }
+
+            50% {
+                background: #3c2b41;
+            }
+
+            75% {
+                background: #222022;
+            }
+
+            100% {
+                background: #000000;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        const quadrado = document.querySelector('.quadrado');
+
+        let contador = 0;
+
+        document.onmousemove = function (e) {
+
+            quadrado.style.left = (e.pageX - quadrado.offsetHeight / 2) + 'px';
+            quadrado.style.top = (e.pageY - quadrado.offsetWidth / 2) + 'px';
+
+            const clone = quadrado.cloneNode(true);
+            clone.style.zIndex = 1;
+
+            document.body.appendChild(clone);
+
+        }
+   
+    </script>
+
+</body>
+
+</html>
