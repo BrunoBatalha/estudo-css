@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens</title>
+</head>
+
+<body>
+
+    <h5>Imagem 1</h5>
+
+    <div class='container'>
+        <div class='container-img'>
+            <img src="./images/pinceis.jpg">
+        </div>
+        <p>texto</p>
+    </div>
+
+
+    <div class='container-2'>
+        <div class='container-img'>
+            <img src="./images/porta.jpg">
+        </div>
+        <p>texto</p>
+    </div>
+
+    <div class='container-2'>
+        <div class='container-img'>
+            <img src="./images/arte-1.jpg">
+        </div>
+        <p>texto</p>
+    </div>
+
+
+
+    <style>
+        p {
+            margin: 0;
+        }
+
+        .container,
+        .container-2 {
+            margin: 20px;
+        }
+
+        .container .container-img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .container .container-img>img {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .container-2 .container-img {
+            width: 850px;
+            height: 200px;
+            overflow: hidden;
+            margin: 10px;
+            position: relative;
+        }
+
+        .container-2 .container-img>img {
+            position: absolute;
+            left: -100%;
+            right: -100%;
+            top: -100%;
+            bottom: -100%;
+            margin: auto;
+            width: auto;
+            height: auto;
+            width: 100%;
+        }
+    </style>
+</body>
+
+</html>
