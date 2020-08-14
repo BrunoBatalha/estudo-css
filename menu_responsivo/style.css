@@ -80,16 +80,16 @@ nav .btn-menu .block {
         transition-duration: .2s
     }
     nav .menus {
-        display: none;
         background-color: var(--purple);
         position: fixed;
         top: 100px;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 0;
+        transition: height linear .2s;
     }
     nav .menus ul {
-        display: block;
+        display: none;
         padding: 0;
     }
     nav .menus ul li a {
@@ -104,5 +104,12 @@ nav .btn-menu .block {
         margin: 30px 0;
         padding: 0 20px;
         width: 100%;
+    }
+    .open {
+        height: 100% !important;
+        transition: height linear .2s;
+    }    
+    .d-block{
+        display: block !important;
     }
 }
