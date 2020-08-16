@@ -4,17 +4,20 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     user-select: none;
     position: relative;
-    background-color: #f0f7ff;
+    background-color: #03045E;
 }
 
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 
 input {
     height: 32px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 4px;
     border: 1px solid #b5b5b5;
     padding: 2px 8px;
@@ -46,23 +49,47 @@ button#btn-mostra-modal {
     position: absolute;
     top: 49%;
     left: 45%;
-    background: #489100;
+
+    border:4px solid #90E0EF;
+    border-radius: 25px;
+    background: transparent;    
+    
+    font-size: 15px;
+    font-weight: 700;
     color: #fff;
-    width: 100px;
-    height: 30px;
+
+    width: 150px;
+    height: 50px;
+
+    transition: all .5s;
+}
+button#btn-mostra-modal:hover {
+    border:4px solid #90E0EF;
+    background: #90E0EF;    
+    
+    color: #03045E;
+}
+
+button.btn-entrar:hover {
+    border:4px solid #90E0EF;
+    background: #90E0EF;    
+    
+    color: #03045E;
 }
 
 button.btn-entrar {
-    width: 160px;
-    height: 35px;
-    font-size: 16px;
-    border-radius: 16px;
-    background: #8048c4;
+    border:4px solid #90E0EF;
+    border-radius: 25px;
+    background: transparent;    
+    
+    font-size: 15px;
+    font-weight: 700;
     color: #fff;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all .2s;
+
+    width: 150px;
+    height: 50px;
+
+    transition: all .5s;
 }
 
 button.btn-voltar {
@@ -70,6 +97,7 @@ button.btn-voltar {
     top: 8px;
     right: 24px;
     background-color: transparent;
+    color: #fff;
 }
 
 button.btn-voltar:hover {
@@ -87,13 +115,17 @@ button.btn-voltar:hover {
 }
 
 #modal>section {
-    background-color: #fff;
+    border-radius: 4px;
+    background-color: #023E8A;
+    
     margin: 10% auto 0 auto;
     padding: 32px 24px;
-    border-radius: 4px;
-    box-shadow: 4px 4px 4px #5f5f5f;
-    position: relative;
+    
     max-width: 450px;
+    
+    position: relative;
+
+    color: #fff;
 }
 
 #modal>section>form * {
@@ -101,22 +133,23 @@ button.btn-voltar:hover {
 }
 
 #modal>section>form>fieldset {
-    margin-bottom: 24px;
     font-size: 20px;
     text-align: center;
     border: none;
-    background-color: #8048c4;
+    /* background-color: #0096C7; */
     color: #fff;
-    padding: 16px;
+    padding-bottom: 16px;
     text-transform: uppercase;
 }
 
 #modal>section>form>.grupo-inputs+.grupo-inputs {
-    margin-top: 8px;
+    margin-top: 24px;
 }
 
 #modal>section>form>.grupo-inputs>input {
     width: 100%;
+    height: 40px;
+    margin-top: 8px;
 }
 
 #modal>section>form>button {
