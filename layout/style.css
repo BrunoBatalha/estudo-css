@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+body{
+    background-color: #373f80;
+}
+
+header,main,aside,footer{
+    background-color: tomato;
+}
+
+.flex{
+    width: 960px;
+    margin: 0 auto;
+}
+.flex *{
+    border: 4px solid #373f80;
+    height: 150px;
+    text-align: center;
+    font-size: 24px;
+    text-transform: capitalize; 
+}
+.flex main{
+    float: left;
+    width:80%;
+}

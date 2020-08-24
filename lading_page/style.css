@@ -1,3 +1,11 @@
+:root {
+    azul-escuro: #14172B;
+    azul-escuro-2: #24263B;
+    vermelho: #FF4A57;
+    cinza: #E3DFDF;
+    branco: #FFF;
+}
+
 * {
     margin: 0;
     padding: 0;
