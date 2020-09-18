@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Path</title>
+  </head>
+
+  <body>
+    <canvas width="500" height="200"></canvas>
+
+    <script>
+      const canvas = document.querySelector("canvas");
+      canvas.style.border = "1px solid black";
+      const context = canvas.getContext("2d");
+
+      // Inicia Path
+      context.beginPath();
+      // Posiciona ponto inicial
+      context.moveTo(170, 10);
+      // Desenha linha para
+      context.lineTo(190, 70);
+      context.strokeStyle = "green";
+      context.stroke();
+    </script>
+  </body>
+</html>

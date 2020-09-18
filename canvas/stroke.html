@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stroke</title>
+  </head>
+
+  <body>
+    <canvas width="500" height="200"></canvas>
+
+    <script>
+      const canvas = document.querySelector("canvas");
+      canvas.style.border = "1px solid black";
+      const context = canvas.getContext("2d");
+
+      // Preenchimento
+      context.fillStyle = "red";
+      context.fillRect(50, 50, 100, 100);
+
+      // Contorno
+      context.lineWidth = 3;
+      context.strokeStyle = "blue";
+      context.strokeRect(50, 50, 100, 100);
+    </script>
+  </body>
+</html>

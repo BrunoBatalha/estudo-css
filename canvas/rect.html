@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rect</title>
+  </head>
+
+  <body>
+    <canvas width="500" height="200"></canvas>
+
+    <script>
+      const canvas = document.querySelector("canvas");
+      canvas.style.border = "1px solid black";
+      const context = canvas.getContext("2d");
+
+      context.fillStyle = "red";
+      context.fillRect(50, 50, 100, 100);
+      context.fill();
+    </script>
+  </body>
+</html>
