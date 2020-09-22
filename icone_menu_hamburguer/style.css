@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #3FAF82;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.bar:nth-child(2) {
+    margin: 12px auto;
+}
+
+.bar {
+    width: 70px;
+    height: 7px;
+    background: #272727;
+    border-radius: 3px;
+    box-shadow: 0 2px 7px #363636;
+    transition: all 500ms;
+}
+
+.bar:nth-child(1) {
+    animation: animate-line-1-rev .7s ease-in-out;
+}
+
+.bar:nth-child(2) {
+    animation: animate-line-2-rev .7s ease-in-out;
+}
+
+.bar:nth-child(3) {
+    animation: animate-line-3-rev .7s ease-in-out;
+}
+
+.active .bar:nth-child(1) {
+    animation: animate-line-1 .7s forwards;
+}
+
+.active .bar:nth-child(2) {
+    animation: animate-line-2 .7s forwards;
+}
+
+.active .bar:nth-child(3) {
+    animation: animate-line-3 .7s forwards;
+}
+
+@keyframes animate-line-1 {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(0, 20px, 0) rotate(0);
+    }
+    100% {
+        transform: translate3d(0, 20px, 0) rotate(45deg);
+    }
+}
+
+@keyframes animate-line-2 {
+    100% {
+        width: 0%;
+        visibility: hidden;
+    }
+}
+
+@keyframes animate-line-3 {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate3d(0, -20px, 0) rotate(0);
+    }
+    100% {
+        transform: translate3d(0, -20px, 0) rotate(-45deg);
+    }
+}
+
+@keyframes animate-line-1-rev {
+    0% {
+        transform: translate3d(0, 20px, 0) rotate(45deg);
+    }
+    50% {
+        transform: translate3d(0, 20px, 0) rotate(0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes animate-line-2-rev {
+    0% {
+        width: 0%;
+        visibility: visible;
+    }
+    100% {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+@keyframes animate-line-3-rev {
+    0% {
+        transform: translate3d(0, -20px, 0) rotate(135deg);
+    }
+    50% {
+        transform: translate3d(0, -20px, 0) rotate(0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
