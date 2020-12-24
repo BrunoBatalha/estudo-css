@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+
+    <canvas width="500px" height="500px"></canvas>
+    <style>
+        body {
+            display: flex;
+            justify-content: center
+        }
+    </style>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const WIDTH = 500, HEIGHT = 500;
+        canvas.style.border = '1px solid black'
+        const ctx = canvas.getContext('2d');
+
+        ctx.beginPath();
+        ctx.moveTo(0, HEIGHT / 2);
+        ctx.lineTo(WIDTH / 2, 0);
+        ctx.lineTo(WIDTH, HEIGHT / 2);
+        ctx.lineTo(WIDTH / 2, HEIGHT);
+        ctx.fill();
+    </script>
+</body>
+
+</html>

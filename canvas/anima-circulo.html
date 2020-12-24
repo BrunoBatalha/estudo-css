@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const Circle = class Circle {
+            constructor(x, y, speedX, speedY, radius, color = 'black') {
+                this.x = x;
+                this.y = y;
+                this.speedX = speedX;
+                this.speedY = speedY;
+                this.radius = radius;
+                this.color = color
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, true);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x >= canvas.width - this.radius ||
+                    this.x <= this.radius) {
+                    this.speedX = -this.speedX;
+                }
+
+                if (this.y >= canvas.height - this.radius ||
+                    this.y <= this.radius) {
+                    this.speedY = -this.speedY;
+                }
+            }
+        }
+
+        const c1 = new Circle(20, 100, 20, 50, 20, 'red');
+        const c2 = new Circle(450, 400, -20, 50, 20);
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            c1.draw();
+            c2.draw();
+        }
+
+        function update() {
+            c1.update();
+            c2.update();
+        }
+
+        function run() {
+            update();
+            draw();
+            window.requestAnimationFrame(run);
+        }
+
+        run();
+    </script>
+</body>
+
+</html>
