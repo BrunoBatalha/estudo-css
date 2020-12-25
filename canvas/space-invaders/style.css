@@ -2,7 +2,39 @@ body {
     background-color: black;
     display: flex;
     justify-content: center;
+    position: relative;
 }
-canvas{
-    background-color: green;
+
+canvas {
+    background: url('./img/background.gif') no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: balance infinite .5s linear alternate;
+    width: 50%;
+    height: calc(100vh - 20px);
+}
+
+#text-center {
+    position: absolute;
+    color: #bdc3c7;
+    filter: opacity(.7);
+    z-index: 2;
+    font-size: xx-large;
+    font-family: fantasy;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+}
+
+@keyframes balance {
+    from {
+        /* transform: rotate(-.5deg); */
+        transform: translate(-5px, 2px);
+        background-color: #3498db;
+    }
+    to {
+        background-color: #16a085;
+        transform: translate(5px, 0);
+        /* transform: rotate(.5deg); */
+    }
 }
