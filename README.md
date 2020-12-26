@@ -1,1 +1,1 @@
-# Treinando - frontend
+# Estudo - frontend
