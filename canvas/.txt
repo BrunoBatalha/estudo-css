@@ -1,5 +1,0 @@
-const canvas = document.querySelector("canvas");
-const context = canvas.getContext("2d");
-
-context.
-context.fillRect(50, 50, 100, 100);

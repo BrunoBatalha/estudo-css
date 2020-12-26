@@ -3,7 +3,7 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: black;
-    background-image: url('../images/star.gif');
+    background-image: url('./img/star.gif');
 }
 
 :root {
@@ -19,7 +19,7 @@ body {
 }
 
 #fundo {
-    background-image: url('../images/snow.gif');
+    background-image: url('./img/snow.gif');
 }
 
 #pisca-pisca {
@@ -27,7 +27,7 @@ body {
     top: 0px;
     width: 100vw;
     height: 650px;
-    background-image: url('../images/pisca-pisca.gif');
+    background-image: url('./img/pisca-pisca.gif');
     background-size: 40% 65%;
     background-position: center 130px;
     background-repeat: no-repeat;
