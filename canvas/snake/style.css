@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+canvas {
+    width: 500px;
+    height: 500px;
+    /* height: calc(100vh - 20px); */
+    border: 1px solid #fff;
+}
+
+#text-center {
+    position: absolute;
+    color: #bdc3c7;
+    filter: opacity(.7);
+    z-index: 2;
+    font-size: xx-large;
+    font-family: fantasy;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+}
