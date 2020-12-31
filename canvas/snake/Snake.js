@@ -99,14 +99,15 @@ class Snake {
         this.handleKey[e.key](e.key);
       }
     });
+
     // mobile
     let startX, startY;
     let endX, endY;
-    document.body.addEventListener('touchstart', (e) => {
+    document.addEventListener('touchstart', (e) => {
       startX = Math.floor(e.touches.item(0).pageX);
       startY = Math.floor(e.touches.item(0).pageY);
     });
-    document.body.addEventListener('touchmove', (e) => {
+    document.addEventListener('touchmove', (e) => {
       endX = Math.floor(e.touches.item(0).pageX);
       endY = Math.floor(e.touches.item(0).pageY);
       const difX = Math.abs(endX - startX);
@@ -136,6 +137,39 @@ class Snake {
             this.speed = -this.gameSpeed;
           }
         }
+      }
+    });
+
+    const btnLeft = document.querySelector('#btnLeft');
+    const btnRight = document.querySelector('#btnRight');
+    const btnUp = document.querySelector('#btnUp');
+    const btnDown = document.querySelector('#btnDown');
+    btnLeft.addEventListener('click', () => {
+      const direction = 'ArrowLeft';
+      const canKey = this.handleKey.allowedKeys.includes(direction);
+      if (canKey) {
+        this.handleKey[direction](direction);
+      }
+    });
+    btnRight.addEventListener('click', () => {
+      const direction = 'ArrowRight';
+      const canKey = this.handleKey.allowedKeys.includes(direction);
+      if (canKey) {
+        this.handleKey[direction](direction);
+      }
+    });
+    btnUp.addEventListener('click', () => {
+      const direction = 'ArrowUp';
+      const canKey = this.handleKey.allowedKeys.includes(direction);
+      if (canKey) {
+        this.handleKey[direction](direction);
+      }
+    });
+    btnDown.addEventListener('click', () => {
+      const direction = 'ArrowDown';
+      const canKey = this.handleKey.allowedKeys.includes(direction);
+      if (canKey) {
+        this.handleKey[direction](direction);
       }
     });
   }
