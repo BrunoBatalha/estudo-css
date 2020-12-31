@@ -102,11 +102,11 @@ class Snake {
     // mobile
     let startX, startY;
     let endX, endY;
-    document.addEventListener('touchstart', (e) => {
+    document.body.addEventListener('touchstart', (e) => {
       startX = Math.floor(e.touches.item(0).pageX);
       startY = Math.floor(e.touches.item(0).pageY);
     });
-    document.addEventListener('touchmove', (e) => {
+    document.body.addEventListener('touchmove', (e) => {
       endX = Math.floor(e.touches.item(0).pageX);
       endY = Math.floor(e.touches.item(0).pageY);
       const difX = Math.abs(endX - startX);
