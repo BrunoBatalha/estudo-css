@@ -1,10 +1,10 @@
 'use strict';
 function main() {
   const canvas = document.querySelector('canvas');
-  const GAME_SPEED = 10;
   const ctx = canvas.getContext('2d');
-  const TIME_TO_OBSTACLE = getValueByPercentage(GAME_SPEED, 300);
-  const TIME_TO_INCREASE_DIFFICULTY = getValueByPercentage(GAME_SPEED, 1000);
+  const GAME_SPEED = 10;
+  const SNAKE_SPEED = getValueByPercentage(GAME_SPEED, 40);
+  const TIME_TO_OBSTACLE = getValueByPercentage(GAME_SPEED, 1000);
   let snake;
   let obstacles = [];
   let playing;
@@ -12,17 +12,15 @@ function main() {
   let speedSnake;
   let speedObstacle;
   let timeToGenerateObstacle;
-  let timeToIncreaseDifficulty;
 
   function initGame() {
     obstacles = [];
     playing = true;
     score = 0;
-    speedSnake = getValueByPercentage(GAME_SPEED, 50);
+    speedSnake = SNAKE_SPEED;
     speedObstacle = GAME_SPEED - getValueByPercentage(GAME_SPEED, 70);
     timeToGenerateObstacle = TIME_TO_OBSTACLE;
-    timeToIncreaseDifficulty = TIME_TO_INCREASE_DIFFICULTY;
-    snake = new Snake(0, canvas.height - 50, 10, 10, speedSnake, ctx);
+    snake = new Snake(canvas.width / 2 - 6, canvas.height / 2 + 12, 10, 10, speedSnake, ctx, 1000);
     document.querySelector('#text-center').innerHTML = 0;
     document.removeEventListener('keydown', listenerResetGame);
     initControllers();
@@ -39,7 +37,7 @@ function main() {
 
   function gameOver() {
     const eText = document.querySelector('#text-center');
-    eText.innerHTML = 'O Boleto venceu';
+    eText.innerHTML = 'Fim de jogo';
     document.addEventListener('keydown', listenerResetGame);
   }
 
@@ -71,6 +69,19 @@ function main() {
     );
   }
 
+  function selfColision(entity1, entity2) {
+    return (
+      (entity2.x > entity1.x &&
+        entity2.x < entity1.getXWidth() &&
+        entity2.y > entity1.y &&
+        entity2.y < entity1.getYHeigth()) ||
+      (entity2.getXWidth() > entity1.x &&
+        entity2.getXWidth() < entity1.getXWidth() &&
+        entity2.getYHeigth() > entity1.y &&
+        entity2.getYHeigth() < entity1.getYHeigth())
+    );
+  }
+
   function checkCollisions() {
     obstacles.forEach((obstacle, indexObstacle) => {
       if (isEat(obstacle, snake)) {
@@ -79,6 +90,20 @@ function main() {
         newScore(score);
         snake.increase();
       }
+    });
+    if (
+      snake.x < 0 ||
+      snake.getXWidth() >= canvas.width ||
+      snake.y < 0 ||
+      snake.getYHeigth() >= canvas.height
+    ) {
+      playing = false;
+      return;
+    }
+
+    snake.way.forEach((block, i) => {
+      const isColidTail = block.x === snake.x && block.y === snake.y;
+      if (isColidTail && i < snake.way.length - 1) playing = false;
     });
   }
 
