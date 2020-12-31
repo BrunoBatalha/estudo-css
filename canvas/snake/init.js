@@ -20,7 +20,7 @@ function main() {
     speedSnake = SNAKE_SPEED;
     speedObstacle = GAME_SPEED - getValueByPercentage(GAME_SPEED, 70);
     timeToGenerateObstacle = TIME_TO_OBSTACLE;
-    snake = new Snake(canvas.width / 2 - 6, canvas.height / 2 + 12, 10, 10, speedSnake, ctx, 1000);
+    snake = new Snake(canvas.width / 2 - 6, canvas.height / 2 + 12, 10, 10, speedSnake, ctx, 10);
     document.querySelector('#text-center').innerHTML = 0;
     document.removeEventListener('keydown', listenerResetGame);
     initControllers();
