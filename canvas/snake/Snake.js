@@ -23,6 +23,7 @@ class Snake {
     this.ctx = ctx;
     this.size = size;
     this.way = [];
+    this.colorTemp = colorPrimary;
     this.colorPrimary = colorPrimary;
     this.colorShine = colorShine;
     this.directionCurrent = 'ArrowUp';
@@ -79,6 +80,7 @@ class Snake {
     });
     while (this.way.length > this.size) {
       this.way.shift();
+      this.colorPrimary = this.colorTemp;
     }
   }
 
@@ -176,11 +178,8 @@ class Snake {
 
   increase() {
     this.size += 5;
-    const color = this.colorPrimary;
+    this.colorTemp = this.colorPrimary;
     this.colorPrimary = this.colorShine;
-    setTimeout(() => {
-      this.colorPrimary = color;
-    }, 100);
   }
 
   getXWidth() {

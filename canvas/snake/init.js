@@ -125,6 +125,7 @@ function main() {
   function lose() {
     state_current = STATES_ENUM.IN_GAMEOVER;
     snake.colorPrimary = COLOR_SNAKE_LOSE;
+    snake.colorTemp = COLOR_SNAKE_LOSE;
     if (score > getHighscore()) {
       window.localStorage.setItem(HIGHSCORE, score);
     }
