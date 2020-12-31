@@ -3,19 +3,19 @@ let tamanhoCaminho = 500;
 let tamanhoTela = 500;
 
 class Snake {
-  constructor(x, y, width, height, gameSpeed, ctx) {
+  constructor(x, y, width, height, gameSpeed, ctx, size) {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
-    this.speed = 0;
+    this.speed = -gameSpeed;
     this.gameSpeed = gameSpeed;
     this.ctx = ctx;
 
-    this.size = 10;
+    this.size = size;
     this.way = [];
 
-    this.directionCurrent = 'ArrowRight';
+    this.directionCurrent = 'ArrowUp';
     this.directionsUpdate = {
       ArrowRight: () => {
         this.x += this.speed;
@@ -64,6 +64,8 @@ class Snake {
     this.way.push({
       x: this.x,
       y: this.y,
+      getXWidth: () => this.x + 3,
+      getYHeigth: () => this.y + 3,
     });
     while (this.way.length > this.size) {
       this.way.shift();
@@ -90,7 +92,7 @@ class Snake {
   }
 
   increase() {
-    this.size += 1;
+    this.size += 5;
   }
 
   getXWidth() {
