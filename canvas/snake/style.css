@@ -89,7 +89,7 @@ canvas {
         letter-spacing: .1rem;
     }
     #instructions li::after {
-        content: 'Delize na tela para mover ou use os botões';
+        content: 'Deslize na tela para mover ou use os botões';
     }
     #buttons {
         display: flex;
